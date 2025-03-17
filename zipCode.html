@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="zip.css">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        fetch('navBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    });</script>
+    <h2>Zip Code Distance Calculator</h>
+    <form id="dataForm" action="zip.php" method="post">
+        Zip Start Location: <input type="text" name="start" id="start" value=""><br>
+        Zip End Location <input type="text" name="end" id="end" value=""><br>
+        <input type="submit" value="Find the Distance">
+    </form>
+</body>
+</html>
